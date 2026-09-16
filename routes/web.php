@@ -14,6 +14,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\PublicJobController;
+use App\Http\Controllers\UiController;
 
 
 
@@ -34,6 +35,9 @@ Route::get('/jobs/{job}', [PublicJobController::class, 'show'])->name('jobs.show
 
 Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
 Route::get('/companies/{company}', [CompanyController::class, 'show'])->name('companies.show');
+
+Route::get('/ui/companies', [UiController::class, 'companies'])->name('ui.companies');
+Route::get('/ui/posts', [UiController::class, 'posts'])->name('ui.posts');
 
 
 require __DIR__.'/auth.php';
